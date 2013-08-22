@@ -1,0 +1,17 @@
+﻿@{
+    string[] members = {"Jani", "Hege", "Kai", "Jim"};
+    ViewBag.Title = "Index page";
+    ViewBag.Products = members;
+}
+<div data-ng-app="app" data-ng-controller="AppCtrl">
+    <h2 data-ng-bind="Title">@ViewBag.Title</h2>
+
+    <ul>
+        <ng-repeat-area>
+        @foreach (var product in ViewBag.Products)
+        { 
+            <li data-ng-repeat="Item in Items"><span data-ng-bind="Item.Title">@product</span></li>
+        }
+        </ng-repeat-area>
+    </ul>
+</div>
